@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+    <br><br>
+    <h1>{% block title %}Matching Jobs{% endblock %}</h1>
+    <br><br>
+
+    <form action="/" method="post">
+      <label for="location">Location:</label>
+      <input type="type" id="location" name="location" value="{{location}}">
+      <label for="skills">Skills:</label>
+      <input type="type" id="skills" name="skills" value="{{skills}}">
+      <input type="submit" value="Search">
+    </form>
+  
+    
+
+  {% endblock %}
+
+
+{% block content %}
+  {% for job in jobs %}
+    <article class="job">
+      <header>
+        <div>
+          <h1>{{ job['title'] }}</h1>
+          <p class="body">Location: {{ job['location'] }}</p>
+          <p class="body">Skill requirements: {{ job['skills'] }}</p>
+        </div>
+       </header>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
