@@ -1,8 +1,16 @@
 # JobSearch
 Simple jobsearch portal using Flask and Python
 
-Run init.sh to set the environment variables.
+OPTIONAL: create a virtual environment using 
+$ python3 -m venv venv
+$ . venv/bin/activate
 
-flask init-db
+$ pip3 install -r jobsearch/requirements.txt
 
-flask run
+$ . jobsearch/init.sh.
+
+$ flask init-db
+
+$ flask run
+
+Connect browser to http://127.0.0.1:5000
